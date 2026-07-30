@@ -1,14 +1,15 @@
 ﻿
-namespace block_racing_common.Game.Pieces;
-
-public readonly struct CellPosition
+namespace block_racing_common.Game.Pieces
 {
-    public readonly int X;
-    public readonly int Y;
-
-    public CellPosition(int x, int y)
+    public readonly struct CellPosition
     {
-        X = x;
-        Y = y;
+        public readonly int X;
+        public readonly int Y;
+
+        public CellPosition(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
     }
 }
