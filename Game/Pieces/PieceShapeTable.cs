@@ -1,5 +1,5 @@
-﻿
-using block_racing_common.Game.Enums;
+﻿using block_racing_common.Game.Enums;
+using System.Collections.Generic;
 
 namespace block_racing_common.Game.Pieces
 {
