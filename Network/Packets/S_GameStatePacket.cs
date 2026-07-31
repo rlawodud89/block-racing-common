@@ -51,6 +51,22 @@ namespace block_racing_common.Network.Packets
 
             byte mode = reader.ReadByte();
 
+            PieceType? currentPieceType = null;
+            Rotation? currentPieceRotation = null;
+
+            bool hasPiece = reader.ReadBool();
+
+            if (hasPiece)
+            {
+                currentPieceType =
+                    (PieceType)reader.ReadByte();
+
+                currentPieceRotation =
+                    (Rotation)reader.ReadByte();
+            }
+
+            float shootCooldownRemaining = reader.ReadFloat();
+
             LaneSnapshot lane = ReadLane(reader);
 
 
@@ -61,6 +77,9 @@ namespace block_racing_common.Network.Packets
                 speed,
                 stunned,
                 (PlayMode)mode,
+                currentPieceType,
+                currentPieceRotation,
+                shootCooldownRemaining,
                 lane);
         }
 
@@ -151,6 +170,23 @@ namespace block_racing_common.Network.Packets
 
             writer.Write((byte)player.Mode);
 
+            bool hasPiece =
+                player.CurrentPieceType.HasValue &&
+                player.CurrentPieceRotation.HasValue;
+
+            writer.Write(hasPiece);
+
+            if (hasPiece)
+            {
+                writer.Write(
+                    (byte)player.CurrentPieceType.Value);
+
+                writer.Write(
+                    (byte)player.CurrentPieceRotation.Value);
+            }
+
+            writer.Write(
+                player.ShootCooldownRemaining);
 
             WriteLane(writer, player.Lane);
         }
