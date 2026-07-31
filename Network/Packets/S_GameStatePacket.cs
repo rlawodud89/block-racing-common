@@ -21,6 +21,8 @@ namespace block_racing_common.Network.Packets
         {
             long tick = reader.ReadLong();
 
+            int targetDistance = reader.ReadInt32();
+
             ushort playerCount = reader.ReadUInt16();
 
             List<PlayerSnapshot> players = new();
@@ -32,6 +34,7 @@ namespace block_racing_common.Network.Packets
 
             Snapshot = new GameStateSnapshot(
                 tick,
+                targetDistance,
                 players);
         }
 
@@ -144,6 +147,8 @@ namespace block_racing_common.Network.Packets
         public void Write(PacketWriter writer)
         {
             writer.Write(Snapshot.Tick);
+
+            writer.Write(Snapshot.TargetDistance);
 
             writer.Write((ushort)Snapshot.Players.Count);
 
