@@ -15,5 +15,6 @@ namespace block_racing_common.Network
         S_StartGame = 102,
         S_GameState = 103,
         S_GameEnd = 104,
+        S_MatchCanceled = 105,
     }
 }
