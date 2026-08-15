@@ -9,16 +9,19 @@ namespace block_racing_common.Network.Packets
         public PacketId PacketId => PacketId.S_GameEnd;
 
         public GameResultType Result { get; set; }
+        public GameEndReason Reason { get; set; }
 
 
         public void Read(PacketReader reader)
         {
             Result = (GameResultType)reader.ReadByte();
+            Reason = (GameEndReason)reader.ReadByte();
         }
 
         public void Write(PacketWriter writer)
         {
             writer.Write((byte)Result);
+            writer.Write((byte)Reason);
         }
     }
 }
