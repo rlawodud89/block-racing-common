@@ -1,9 +1,9 @@
 ﻿
 namespace block_racing_common.Network.Packets
 {
-    public class S_MatchFoundPacket : IPacket
+    public class S_RoomReadyPacket : IPacket
     {
-        public PacketId PacketId => PacketId.S_MatchFound;
+        public PacketId PacketId => PacketId.S_RoomReady;
 
         public int RoomId { get; set; }
 

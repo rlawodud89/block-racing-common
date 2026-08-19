@@ -14,11 +14,11 @@ namespace block_racing_common.Network
 
         // Server to Client
         S_Login = 100,
-        S_MatchFound = 101,
+        S_RoomReady = 101,
         S_StartGame = 102,
         S_GameState = 103,
         S_GameEnd = 104,
-        S_MatchCanceled = 105,
+        S_GameCanceled = 105,
         S_RoomCreated = 106,
         S_RoomJoined = 107,
     }

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace block_racing_common.Network.Packets
 {
-    public class S_MatchCanceledPacket : IPacket
+    public class S_GameCanceledPacket : IPacket
     {
-        public PacketId PacketId => PacketId.S_MatchCanceled;
+        public PacketId PacketId => PacketId.S_GameCanceled;
 
         public void Read(PacketReader reader)
         {
