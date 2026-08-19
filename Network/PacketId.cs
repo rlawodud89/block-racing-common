@@ -10,6 +10,7 @@ namespace block_racing_common.Network
         C_Input = 3,
         C_CreateRoom = 4,
         C_JoinRoom = 5,
+        C_LeaveRoom = 6,
 
         // Server to Client
         S_Login = 100,
