@@ -8,6 +8,8 @@ namespace block_racing_common.Network
         C_MatchRequest = 1,
         C_Ready = 2,
         C_Input = 3,
+        C_CreateRoom = 4,
+        C_JoinRoom = 5,
 
         // Server to Client
         S_Login = 100,
@@ -16,5 +18,7 @@ namespace block_racing_common.Network
         S_GameState = 103,
         S_GameEnd = 104,
         S_MatchCanceled = 105,
+        S_RoomCreated = 106,
+        S_RoomJoined = 107,
     }
 }
