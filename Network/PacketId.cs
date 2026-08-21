@@ -10,7 +10,7 @@ namespace block_racing_common.Network
         C_Input = 3,
         C_CreateRoom = 4,
         C_JoinRoom = 5,
-        C_LeaveRoom = 6,
+        C_CloseRoom = 6,
         C_RematchRequest = 7,
         C_ExitRoom = 8,
 

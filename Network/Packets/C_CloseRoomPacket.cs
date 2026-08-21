@@ -2,9 +2,9 @@
 
 namespace block_racing_common.Network.Packets
 {
-    public class C_LeaveRoomPacket : IPacket
+    public class C_CloseRoomPacket : IPacket
     {
-        public PacketId PacketId => PacketId.C_LeaveRoom;
+        public PacketId PacketId => PacketId.C_CloseRoom;
 
         public void Read(PacketReader reader)
         {
