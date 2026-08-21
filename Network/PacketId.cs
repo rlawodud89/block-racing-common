@@ -11,6 +11,8 @@ namespace block_racing_common.Network
         C_CreateRoom = 4,
         C_JoinRoom = 5,
         C_LeaveRoom = 6,
+        C_RematchRequest = 7,
+        C_ExitRoom = 8,
 
         // Server to Client
         S_Login = 100,
@@ -21,5 +23,6 @@ namespace block_racing_common.Network
         S_GameCanceled = 105,
         S_RoomCreated = 106,
         S_RoomJoined = 107,
+        S_OpponentExit = 108,
     }
 }
