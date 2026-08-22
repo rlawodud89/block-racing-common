@@ -1,7 +1,7 @@
 ﻿
 namespace block_racing_common.Game.Enums
 {
-    public enum PieceType
+    public enum PieceType : byte
     {
         Single,
 

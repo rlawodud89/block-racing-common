@@ -11,13 +11,13 @@ namespace block_racing_common.Network.Packets
 
         public void Read(PacketReader reader)
         {
-            InputType = (InputType)reader.ReadInt32();
+            InputType = (InputType)reader.ReadByte();
         }
 
 
         public void Write(PacketWriter writer)
         {
-            writer.Write((int)InputType);
+            writer.Write((byte)InputType);
         }
     }
 }

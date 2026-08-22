@@ -1,7 +1,7 @@
 ﻿
 namespace block_racing_common.Game.Enums
 {
-    public enum Rotation
+    public enum Rotation : byte
     {
         Up = 0,
         Right = 1,

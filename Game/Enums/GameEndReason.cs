@@ -1,7 +1,7 @@
 ﻿
 namespace block_racing_common.Game.Enums
 {
-    public enum GameEndReason
+    public enum GameEndReason : byte
     {
         Normal,
         OpponentDisconnected

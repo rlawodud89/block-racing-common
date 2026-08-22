@@ -1,7 +1,7 @@
 ﻿
 namespace block_racing_common.Game.Enums
 {
-    public enum InputType
+    public enum InputType : byte
     {
         MoveLeft,
         MoveRight,

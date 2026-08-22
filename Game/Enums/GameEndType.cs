@@ -1,7 +1,7 @@
 ﻿
 namespace block_racing_common.Game.Enums
 {
-    public enum GameResultType
+    public enum GameResultType : byte
     {
         None = 0,
         Win = 1,
