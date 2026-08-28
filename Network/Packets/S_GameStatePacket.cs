@@ -40,7 +40,7 @@ namespace block_racing_common.Network.Packets
 
         private PlayerSnapshot ReadPlayer(PacketReader reader)
         {
-            int id = reader.ReadInt32();
+            long id = reader.ReadLong();
 
 
             int carX = reader.ReadInt32();
@@ -118,7 +118,7 @@ namespace block_racing_common.Network.Packets
 
             for (int i = 0; i < count; i++)
             {
-                int ownerId = reader.ReadInt32();
+                long ownerId = reader.ReadLong();
 
                 int x = reader.ReadInt32();
 

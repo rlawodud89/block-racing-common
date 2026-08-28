@@ -4,7 +4,7 @@ namespace block_racing_common.Game.Snapshots
 {
     public class FlyingBlockSnapshot
     {
-        public int OwnerId { get; }
+        public long OwnerId { get; }
 
         public int X { get; }
 
@@ -15,7 +15,7 @@ namespace block_racing_common.Game.Snapshots
         public Rotation Rotation { get; }
 
 
-        public FlyingBlockSnapshot(int ownerId, int x, int y,
+        public FlyingBlockSnapshot(long ownerId, int x, int y,
             PieceType type, Rotation rotation)
         {
             OwnerId = ownerId;
