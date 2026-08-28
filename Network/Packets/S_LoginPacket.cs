@@ -5,13 +5,13 @@ namespace block_racing_common.Network.Packets
     {
         public PacketId PacketId => PacketId.S_Login;
 
-        public int PlayerId { get; set; }
+        public long PlayerId { get; set; }
 
         public string Nickname { get; set; }
 
         public void Read(PacketReader reader)
         {
-            PlayerId = reader.ReadInt32();
+            PlayerId = reader.ReadLong();
             Nickname = reader.ReadString();
         }
 

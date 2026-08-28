@@ -5,12 +5,12 @@ namespace block_racing_common.Network.Packets
     {
         public PacketId PacketId => PacketId.S_StartGame;
 
-        public int RoomId { get; set; }
+        public long RoomId { get; set; }
         public long StartTick { get; set; }
 
         public void Read(PacketReader reader)
         {
-            RoomId = reader.ReadInt32();
+            RoomId = reader.ReadLong();
             StartTick = reader.ReadLong();
         }
 

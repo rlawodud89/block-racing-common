@@ -7,14 +7,14 @@ namespace block_racing_common.Network.Packets
         public PacketId PacketId => PacketId.S_RoomCreated;
 
         public RoomCreateResult Result { get; set; }
-        public int RoomId { get; set; }
+        public long RoomId { get; set; }
         public string RoomCode { get; set; } = string.Empty;
 
 
         public void Read(PacketReader reader)
         {
             Result = (RoomCreateResult)reader.ReadByte();
-            RoomId = reader.ReadInt32();
+            RoomId = reader.ReadLong();
             RoomCode = reader.ReadString();
         }
 
