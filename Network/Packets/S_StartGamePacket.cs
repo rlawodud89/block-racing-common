@@ -8,16 +8,22 @@ namespace block_racing_common.Network.Packets
         public long RoomId { get; set; }
         public long StartTick { get; set; }
 
+        public float ShootCooldownTime { get; set; }
+
         public void Read(PacketReader reader)
         {
             RoomId = reader.ReadLong();
             StartTick = reader.ReadLong();
+
+            ShootCooldownTime = reader.ReadFloat();
         }
 
         public void Write(PacketWriter writer)
         {
             writer.Write(RoomId);
             writer.Write(StartTick);
+
+            writer.Write(ShootCooldownTime);
         }
     }
 }
