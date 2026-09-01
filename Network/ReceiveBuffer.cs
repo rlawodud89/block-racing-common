@@ -23,8 +23,6 @@ namespace block_racing_common.Network
             ushort packetLength =
                 (ushort)(_buffer[0] | (_buffer[1] << 8)); // 강제 little endian
 
-            Console.WriteLine($"PacketLength: {packetLength}");
-
             if (_buffer.Count < packetLength)
                 return false;
 
