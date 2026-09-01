@@ -2,7 +2,7 @@
 
 namespace block_racing_common.Network.Packets
 {
-    public class C_RematchReqeustPacket : IPacket
+    public class C_RematchRequestPacket : IPacket
     {
         public PacketId PacketId => PacketId.C_RematchRequest;
 
