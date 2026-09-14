@@ -7,6 +7,8 @@ namespace block_racing_common.Network
     {
         private readonly List<byte> _buffer = new();
 
+        private const int MaxPacketSize = 1024;
+
         public void Append(byte[] data, int length)
         {
             for (int i = 0; i < length; i++)
@@ -21,7 +23,14 @@ namespace block_racing_common.Network
                 return false;
 
             ushort packetLength =
-                (ushort)(_buffer[0] | (_buffer[1] << 8)); // 강제 little endian
+                (ushort)(_buffer[0] | (_buffer[1] << 8));
+
+            if (packetLength < PacketHeader.Size ||
+                packetLength > MaxPacketSize)   
+            {
+                throw new InvalidDataException(
+                    $"Invalid packet length: {packetLength}");
+            }
 
             if (_buffer.Count < packetLength)
                 return false;
