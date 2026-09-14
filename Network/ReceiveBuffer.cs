@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace block_racing_common.Network
 {
@@ -26,7 +27,7 @@ namespace block_racing_common.Network
                 (ushort)(_buffer[0] | (_buffer[1] << 8));
 
             if (packetLength < PacketHeader.Size ||
-                packetLength > MaxPacketSize)   
+                packetLength > MaxPacketSize)
             {
                 throw new InvalidDataException(
                     $"Invalid packet length: {packetLength}");
