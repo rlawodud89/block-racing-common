@@ -20,6 +20,17 @@ namespace block_racing_common.Network
             Write(packetId);
         }
 
+        public void Reset(ushort packetId)
+        {
+            _position = 0;
+
+            // Length placeholder
+            _position += 2;
+
+            // PacketId
+            Write(packetId);
+        }
+
         public void Write(bool value)
         {
             EnsureCapacity(1);
