@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Text;
 
 namespace block_racing_common.Network
@@ -17,7 +18,9 @@ namespace block_racing_common.Network
         private void EnsureSize(int size)
         {
             if (_pos + size > _buffer.Length)
-                throw new Exception($"PacketReader overflow: pos={_pos}, size={size}, len={_buffer.Length}");
+                throw new InvalidDataException(
+                    $"PacketReader overflow: pos={_pos}, size={size}, len={_buffer.Length}"
+                    );
         }
 
         public bool ReadBool()
